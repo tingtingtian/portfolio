@@ -1,0 +1,982 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>田婷婷 - 区块链智能合约工程师 | Tingting Tian Resume</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --primary-color: #3b82f6;
+      --primary-dark: #1e40af;
+      --secondary-color: #06b6d4;
+      --accent-color: #8b5cf6;
+      --success-color: #10b981;
+      --warning-color: #f59e0b;
+      --danger-color: #ef4444;
+      --text-primary: #1f2937;
+      --text-secondary: #6b7280;
+      --bg-primary: #ffffff;
+      --bg-secondary: #f8fafc;
+      --bg-card: #ffffff;
+      --border-color: #e5e7eb;
+      --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+      --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+      --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+      --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+    }
+
+    [data-theme="dark"] {
+      --text-primary: #f9fafb;
+      --text-secondary: #d1d5db;
+      --bg-primary: #0f172a;
+      --bg-secondary: #1e293b;
+      --bg-card: #1e293b;
+      --border-color: #374151;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      line-height: 1.6;
+      color: var(--text-primary);
+      background: var(--bg-primary);
+      transition: all 0.3s ease;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem;
+      background: var(--bg-card);
+      box-shadow: var(--shadow-xl);
+      border-radius: 20px;
+      margin-top: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: 3rem;
+      padding: 2rem 0;
+      background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+      border-radius: 16px;
+      color: white;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .header::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="white" opacity="0.1"/><circle cx="75" cy="75" r="1" fill="white" opacity="0.1"/><circle cx="50" cy="10" r="0.5" fill="white" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+      opacity: 0.3;
+    }
+
+    .header-content {
+      position: relative;
+      z-index: 1;
+    }
+
+    .name {
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .title {
+      font-size: 1.25rem;
+      font-weight: 500;
+      margin-bottom: 1rem;
+      opacity: 0.95;
+    }
+
+    .contact-info {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+      font-size: 0.95rem;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: white;
+      text-decoration: none;
+      transition: transform 0.2s ease;
+    }
+
+    .contact-item:hover {
+      transform: translateY(-2px);
+    }
+
+    .section {
+      margin-bottom: 3rem;
+    }
+
+    .section-title {
+      font-size: 1.75rem;
+      font-weight: 600;
+      color: var(--primary-color);
+      margin-bottom: 1.5rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 3px solid var(--primary-color);
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .section-content {
+      color: var(--text-secondary);
+      line-height: 1.7;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+      margin-top: 1rem;
+    }
+
+    .skill-category {
+      background: var(--bg-secondary);
+      padding: 1.5rem;
+      border-radius: 12px;
+      border-left: 4px solid var(--primary-color);
+    }
+
+    .skill-category h4 {
+      color: var(--text-primary);
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .project-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      box-shadow: var(--shadow-md);
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .project-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 4px;
+      height: 100%;
+      background: linear-gradient(to bottom, var(--primary-color), var(--secondary-color));
+    }
+
+    .project-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-xl);
+    }
+
+    .project-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      margin-bottom: 1rem;
+    }
+
+    .project-title {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 0.5rem;
+    }
+
+    .project-tech {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .tech-tag {
+      background: var(--primary-color);
+      color: white;
+      padding: 0.25rem 0.75rem;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 500;
+    }
+
+    .project-description {
+      color: var(--text-secondary);
+      margin-bottom: 1rem;
+      font-style: italic;
+    }
+
+    .project-details {
+      margin-bottom: 1rem;
+    }
+
+    .project-details h5 {
+      color: var(--text-primary);
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      margin-top: 1rem;
+    }
+
+    .project-details ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .project-details li {
+      padding: 0.25rem 0;
+      padding-left: 1.5rem;
+      position: relative;
+      color: var(--text-secondary);
+    }
+
+    .project-details li::before {
+      content: '▸';
+      position: absolute;
+      left: 0;
+      color: var(--primary-color);
+      font-weight: bold;
+    }
+
+    .project-outcome {
+      background: var(--bg-secondary);
+      padding: 1rem;
+      border-radius: 8px;
+      border-left: 4px solid var(--success-color);
+    }
+
+    .project-outcome strong {
+      color: var(--success-color);
+    }
+
+    .controls {
+      position: fixed;
+      top: 1rem;
+      right: 1rem;
+      display: flex;
+      gap: 0.5rem;
+      z-index: 1000;
+    }
+
+    .control-btn {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      color: var(--text-primary);
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 0.9rem;
+      transition: all 0.2s ease;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .control-btn:hover {
+      background: var(--primary-color);
+      color: white;
+      transform: translateY(-1px);
+    }
+
+    .control-btn.active {
+      background: var(--primary-color);
+      color: white;
+    }
+
+    .lang-content {
+      display: none;
+    }
+
+    .lang-content.active {
+      display: block;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        margin: 1rem;
+        padding: 1rem;
+      }
+      
+      .name {
+        font-size: 2rem;
+      }
+      
+      .contact-info {
+        flex-direction: column;
+        gap: 1rem;
+      }
+      
+      .skills-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .controls {
+        position: relative;
+        top: auto;
+        right: auto;
+        justify-content: center;
+        margin-bottom: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="controls">
+    <button class="control-btn lang-btn active" data-lang="zh">中文</button>
+    <button class="control-btn lang-btn" data-lang="en">English</button>
+    <button class="control-btn theme-btn" id="theme-toggle">
+      <i class="fas fa-moon"></i>
+    </button>
+  </div>
+
+  <div class="container">
+    <!-- 中文内容 -->
+    <div class="lang-content active" data-lang="zh">
+      <div class="header">
+        <div class="header-content">
+          <h1 class="name">田婷婷</h1>
+          <p class="title">区块链智能合约工程师 • 全栈 Web3 开发者 • AI 多智能体系统构建者</p>
+          <div class="contact-info">
+            <a href="mailto:tiantingting20211122@gmail.com" class="contact-item">
+              <i class="fas fa-envelope"></i>
+              tiantingting20211122@gmail.com
+            </a>
+            <a href="https://github.com/orgs/YumiFly/repositories" target="_blank" class="contact-item">
+              <i class="fab fa-github"></i>
+              YumiFly
+            </a>
+            <span class="contact-item">
+              <i class="fas fa-map-marker-alt"></i>
+              北京，中国
+            </span>
+            <span class="contact-item">
+              <i class="fas fa-laptop"></i>
+              远程友好
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2 class="section-title">
+          <i class="fas fa-user-circle"></i>
+          专业概述
+        </h2>
+        <div class="section-content">
+          <p>具有完整产品交付能力的工程师，擅长将 <strong>智能合约、AI 智能体与云原生后端</strong> 相结合。独立开发多个 Web3 项目，包括房租收入代币化、去中心化仲裁系统、链上彩票平台等。</p>
+          <p>拥有 <strong>6 年云计算平台经验</strong>，参与 CloudOS、建行云、Hcloud、金融云部署，了解 Kubernetes、微服务、DevOps 与 CI/CD 实践。</p>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2 class="section-title">
+          <i class="fas fa-code"></i>
+          核心技能
+        </h2>
+        <div class="skills-grid">
+          <div class="skill-category">
+            <h4><i class="fab fa-ethereum"></i> 智能合约开发</h4>
+            <p>Solidity、ERC 标准、Hardhat、Chainlink Functions & VRF、合约安全审计</p>
+          </div>
+          <div class="skill-category">
+            <h4><i class="fas fa-globe"></i> 全栈 Web3</h4>
+            <p>React / Next.js、Tailwind CSS、Vite、Wagmi、MetaMask、Web3 集成</p>
+          </div>
+          <div class="skill-category">
+            <h4><i class="fas fa-server"></i> 后端与云服务</h4>
+            <p>Go、FastAPI、Kubernetes、Docker、GCS、私有云、微服务架构</p>
+          </div>
+          <div class="skill-category">
+            <h4><i class="fas fa-robot"></i> AI 集成</h4>
+            <p>Gemini、大模型智能体、向量数据库、RAG 系统、多智能体协作</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2 class="section-title">
+          <i class="fas fa-project-diagram"></i>
+          项目经验
+        </h2>
+
+        <div class="project-card">
+          <div class="project-header">
+            <div>
+              <h3 class="project-title">🧠 RAG Audit – 智能合约安全分析平台</h3>
+              <div class="project-tech">
+                <span class="tech-tag">FastAPI</span>
+                <span class="tech-tag">Slither</span>
+                <span class="tech-tag">Echidna</span>
+                <span class="tech-tag">Gemini</span>
+                <span class="tech-tag">pgvector</span>
+                <span class="tech-tag">Next.js</span>
+              </div>
+            </div>
+          </div>
+          <p class="project-description">
+            一个结合传统审计工具（Slither、Echidna）与 AI 问答系统（Gemini）的全栈合约审计平台，采用 RAG（检索增强生成）架构，为开发者提供交互式安全分析体验。
+          </p>
+          <div class="project-details">
+            <h5>核心工作：</h5>
+            <ul>
+              <li>使用 FastAPI 搭建 API 服务，支持合约上传、静态分析、模糊测试</li>
+              <li>接入 embedding-001 与 Gemini-pro 模型，实现基于向量的上下文增强问答</li>
+              <li>建立向量数据库（pgvector），对审计报告语义索引，实现语义检索</li>
+              <li>构建前端（Next.js）支持可视化报告预览、多轮问答与历史记录查看</li>
+              <li>提供 Docker 一键部署支持与完整测试脚本体系</li>
+            </ul>
+          </div>
+          <div class="project-outcome">
+            <strong>项目成果：</strong> 系统支持 .sol/JSON/地址多种格式上传，问答平均响应时间 <1.5s，平台功能已通过测试并规划支持 GPT-4/多链审计扩展。
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-header">
+            <div>
+              <h3 class="project-title">🏠 RentRWA – 租赁资产代币化平台</h3>
+              <div class="project-tech">
+                <span class="tech-tag">Solidity</span>
+                <span class="tech-tag">NFT/ERC20</span>
+                <span class="tech-tag">Gemini</span>
+                <span class="tech-tag">ElizaAgent</span>
+                <span class="tech-tag">Avalanche</span>
+              </div>
+            </div>
+          </div>
+          <p class="project-description">
+            致力于将传统房产租赁资产转化为链上可交易的 Token，结合 AI 智能 Agent 完成合同分析、风险评估与抵押融资流程。
+          </p>
+          <div class="project-details">
+            <h5>核心工作：</h5>
+            <ul>
+              <li>设计资产 NFT 与 ERC20 收益 Token，支持抵押借贷、收益分发</li>
+              <li>集成 ElizaAgent（基于 Gemini）解析租赁合同，自动生成 JSON 格式信用评分报告</li>
+              <li>构建链上合约实现押品登记、利息结算、贷款清算等完整流程</li>
+              <li>开发测试脚本模拟真实业务流程，结合 Supabase 存储合约记录与用户状态</li>
+            </ul>
+          </div>
+          <div class="project-outcome">
+            <strong>项目成果：</strong> 成功完成 RWA token 化闭环，AI 风控评分准确率达 95%，合约部署于 Avalanche 测试网并支持本地 CLI 操作模拟。
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-header">
+            <div>
+              <h3 class="project-title">🤖 Enterprise AI Copilot – 企业级 AI 智能协同系统</h3>
+              <div class="project-tech">
+                <span class="tech-tag">FastAPI</span>
+                <span class="tech-tag">Gemini LLM</span>
+                <span class="tech-tag">pgvector</span>
+                <span class="tech-tag">Next.js</span>
+                <span class="tech-tag">PDF/Word</span>
+              </div>
+            </div>
+          </div>
+          <p class="project-description">
+            构建多智能体协作系统（Multi-Agent System），用于企业日常任务流转、报告生成与语义问答等场景，支持 Agent 间信息传递与多轮上下游协作。
+          </p>
+          <div class="project-details">
+            <h5>核心工作：</h5>
+            <ul>
+              <li>设计 Agent 管理器，支持注册、指令解析、角色权限控制</li>
+              <li>实现多轮任务链路，如"审计分析 ➝ 法务审批 ➝ 报告归档"</li>
+              <li>接入 Gemini 构建问答引擎，结合向量检索（pgvector）实现上下文语义增强</li>
+              <li>支持生成 PDF/Word 格式分析报告，结合日志模块实现操作回溯与审计</li>
+            </ul>
+          </div>
+          <div class="project-outcome">
+            <strong>项目成果：</strong> 系统支持 5+ 类型 Agent，覆盖企业内部核心流程场景，平均任务响应时延小于 1s，AI 回答准确率达 90%+。
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-header">
+            <div>
+              <h3 class="project-title">🧑‍⚖️ AIJudgeDAO – 去中心化 AI 仲裁平台</h3>
+              <div class="project-tech">
+                <span class="tech-tag">Solidity</span>
+                <span class="tech-tag">Chainlink VRF</span>
+                <span class="tech-tag">Reputation Scoring</span>
+                <span class="tech-tag">Next.js</span>
+                <span class="tech-tag">Gemini API</span>
+              </div>
+            </div>
+          </div>
+          <p class="project-description">
+            一个融合 AI 判案能力与 Web3 治理机制的链上仲裁平台，使用 Gemini AI 自动生成仲裁建议，结合 Chainlink VRF 进行仲裁员随机选举，构建信任最小化的争议解决机制。
+          </p>
+          <div class="project-details">
+            <h5>核心工作：</h5>
+            <ul>
+              <li>编写合约模块（DisputeRegistry、VerdictManager、ReputationManager），实现仲裁创建、投票与信用积分机制</li>
+              <li>接入 Gemini 模型，对证据与争议背景进行语义理解，生成仲裁建议</li>
+              <li>构建前端交互平台（Next.js + TailwindCSS），支持上传证据、查看裁决、参与投票</li>
+              <li>采用 Chainlink VRF 保证仲裁员选举过程公开透明</li>
+            </ul>
+          </div>
+          <div class="project-outcome">
+            <strong>项目成果：</strong> 完成端到端仲裁流程，平均响应时延小于 30s，支持声誉评估与可视化判决记录。已部署测试环境并参与 Chainlink Hackathon。
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-header">
+            <div>
+              <h3 class="project-title">🎟️ Lottery – 去中心化彩票生命周期管理平台</h3>
+              <div class="project-tech">
+                <span class="tech-tag">Solidity</span>
+                <span class="tech-tag">USDT 保证金</span>
+                <span class="tech-tag">状态机建模</span>
+                <span class="tech-tag">权限分离</span>
+                <span class="tech-tag">奖池管理</span>
+              </div>
+            </div>
+          </div>
+          <p class="project-description">
+            一个可扩展的彩票合约管理系统，专注于生命周期、权限控制与资金隔离，不绑定具体抽奖逻辑，适用于平台型抽奖应用场景。
+          </p>
+          <div class="project-details">
+            <h5>核心工作：</h5>
+            <ul>
+              <li>设计彩票状态机（Ready → Distribute → Rollout → Terminal），支持复用与终止机制</li>
+              <li>引入管理员与发行者双权限控制模型，增强安全性与治理灵活性</li>
+              <li>支持独立奖池资金管理与 USDT 保证金绑定，实现多发行彩票统一管理</li>
+              <li>开奖后支持状态重置为 Ready，提高彩票的重复利用效率</li>
+              <li>编写全面的状态流转与资金结算测试脚本，确保合约逻辑可靠</li>
+            </ul>
+          </div>
+          <div class="project-outcome">
+            <strong>项目成果：</strong> 项目完成所有核心逻辑模块开发，支持 20+ 状态路径单元测试，具备多合约协同能力，适配平台型彩票发行场景。
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2 class="section-title">
+          <i class="fas fa-trophy"></i>
+          黑客松与荣誉
+        </h2>
+        <div class="section-content">
+          <ul style="list-style: none; padding: 0;">
+            <li style="padding: 0.5rem 0; display: flex; align-items: center; gap: 0.75rem;">
+              <i class="fas fa-medal" style="color: var(--warning-color);"></i>
+              <strong>Chainlink 2025 春季黑客松</strong> - 决赛入围
+            </li>
+            <li style="padding: 0.5rem 0; display: flex; align-items: center; gap: 0.75rem;">
+              <i class="fas fa-award" style="color: var(--success-color);"></i>
+              <strong>Google Cloud ADK Hackathon</strong> - Top 10
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2 class="section-title">
+          <i class="fas fa-graduation-cap"></i>
+          教育与证书
+        </h2>
+        <div class="section-content">
+          <ul style="list-style: none; padding: 0;">
+            <li style="padding: 0.5rem 0; display: flex; align-items: center; gap: 0.75rem;">
+              <i class="fas fa-university" style="color: var(--primary-color);"></i>
+              <strong>信息与计算科学 理学学士</strong> - 2017
+            </li>
+            <li style="padding: 0.5rem 0; display: flex; align-items: center; gap: 0.75rem;">
+              <i class="fas fa-certificate" style="color: var(--secondary-color);"></i>
+              <strong>Chainlink 官方认证开发者</strong> - 2025
+            </li>
+            <li style="padding: 0.5rem 0; display: flex; align-items: center; gap: 0.75rem;">
+              <i class="fas fa-badge-check" style="color: var(--accent-color);"></i>
+              <strong>Devfolio 全栈开发者勋章</strong> - 2025
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- English Content -->
+    <div class="lang-content" data-lang="en">
+      <div class="header">
+        <div class="header-content">
+          <h1 class="name">Tingting Tian</h1>
+          <p class="title">Blockchain Smart Contract Engineer • Full-Stack Web3 Developer • AI Multi-Agent Builder</p>
+          <div class="contact-info">
+            <a href="mailto:tiantingting20211122@gmail.com" class="contact-item">
+              <i class="fas fa-envelope"></i>
+              tiantingting20211122@gmail.com
+            </a>
+            <a href="https://github.com/orgs/YumiFly/repositories" target="_blank" class="contact-item">
+              <i class="fab fa-github"></i>
+              YumiFly
+            </a>
+            <span class="contact-item">
+              <i class="fas fa-map-marker-alt"></i>
+              Beijing, China
+            </span>
+            <span class="contact-item">
+              <i class="fas fa-laptop"></i>
+              Remote-friendly
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2 class="section-title">
+          <i class="fas fa-user-circle"></i>
+          Professional Summary
+        </h2>
+        <div class="section-content">
+          <p>Engineer skilled in combining <strong>smart contracts, AI agents, and cloud-native infrastructure</strong>. Built several full-stack Web3 applications including rental-backed lending, decentralized arbitration, and lottery systems.</p>
+          <p>Also brings <strong>6 years of enterprise cloud experience</strong>, including work on CloudOS, CCB Cloud, and private financial clouds using Kubernetes, DevOps and scalable microservices.</p>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2 class="section-title">
+          <i class="fas fa-code"></i>
+          Core Skills
+        </h2>
+        <div class="skills-grid">
+          <div class="skill-category">
+            <h4><i class="fab fa-ethereum"></i> Smart Contract Development</h4>
+            <p>Solidity, ERC Standards, Hardhat, Chainlink Functions & VRF, Security Auditing</p>
+          </div>
+          <div class="skill-category">
+            <h4><i class="fas fa-globe"></i> Full-stack Web3</h4>
+            <p>React / Next.js, Tailwind CSS, Wagmi, MetaMask, Web3 Integration</p>
+          </div>
+          <div class="skill-category">
+            <h4><i class="fas fa-server"></i> Backend & Cloud</h4>
+            <p>Go, FastAPI, Docker, Kubernetes, Google Cloud Run, Private Cloud</p>
+          </div>
+          <div class="skill-category">
+            <h4><i class="fas fa-robot"></i> AI Integration</h4>
+            <p>Gemini, Vector DB, Agent Systems, RAG Architecture, Multi-Agent Workflows</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2 class="section-title">
+          <i class="fas fa-project-diagram"></i>
+          Projects
+        </h2>
+
+        <div class="project-card">
+          <div class="project-header">
+            <div>
+              <h3 class="project-title">🧠 RAG Audit – Smart Contract Security Analysis Platform</h3>
+              <div class="project-tech">
+                <span class="tech-tag">FastAPI</span>
+                <span class="tech-tag">Slither</span>
+                <span class="tech-tag">Echidna</span>
+                <span class="tech-tag">Gemini</span>
+                <span class="tech-tag">pgvector</span>
+                <span class="tech-tag">Next.js</span>
+              </div>
+            </div>
+          </div>
+          <p class="project-description">
+            A full-stack contract auditing platform combining traditional audit tools (Slither, Echidna) with AI Q&A system (Gemini), using RAG (Retrieval-Augmented Generation) architecture for interactive security analysis.
+          </p>
+          <div class="project-details">
+            <h5>Key Work:</h5>
+            <ul>
+              <li>Built FastAPI service supporting contract upload, static analysis, and fuzzing</li>
+              <li>Integrated embedding-001 and Gemini-pro for vector-based context-enhanced Q&A</li>
+              <li>Established vector database (pgvector) for semantic indexing and retrieval</li>
+              <li>Developed Next.js frontend with visual report preview and chat history</li>
+              <li>Provided Docker deployment and comprehensive testing framework</li>
+            </ul>
+          </div>
+          <div class="project-outcome">
+            <strong>Results:</strong> Supports .sol/JSON/address uploads, <1.5s average response time, tested and ready for GPT-4/multi-chain expansion.
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-header">
+            <div>
+              <h3 class="project-title">🏠 RentRWA – Rental Asset Tokenization Platform</h3>
+              <div class="project-tech">
+                <span class="tech-tag">Solidity</span>
+                <span class="tech-tag">NFT/ERC20</span>
+                <span class="tech-tag">Gemini</span>
+                <span class="tech-tag">ElizaAgent</span>
+                <span class="tech-tag">Avalanche</span>
+              </div>
+            </div>
+          </div>
+          <p class="project-description">
+            Platform for converting traditional rental assets into tradeable on-chain tokens, with AI agent integration for contract analysis, risk assessment, and collateral lending workflows.
+          </p>
+          <div class="project-details">
+            <h5>Key Work:</h5>
+            <ul>
+              <li>Designed asset NFT and ERC20 yield tokens with lending and distribution features</li>
+              <li>Integrated ElizaAgent (Gemini-based) for lease contract parsing and JSON credit reports</li>
+              <li>Built on-chain contracts for collateral registration, interest settlement, and liquidation</li>
+              <li>Developed testing scripts simulating real business flows with Supabase storage</li>
+            </ul>
+          </div>
+          <div class="project-outcome">
+            <strong>Results:</strong> Completed RWA tokenization loop, 95% AI risk scoring accuracy, deployed on Avalanche testnet with CLI simulation support.
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-header">
+            <div>
+              <h3 class="project-title">🤖 Enterprise AI Copilot – Multi-Agent Collaboration System</h3>
+              <div class="project-tech">
+                <span class="tech-tag">FastAPI</span>
+                <span class="tech-tag">Gemini LLM</span>
+                <span class="tech-tag">pgvector</span>
+                <span class="tech-tag">Next.js</span>
+                <span class="tech-tag">PDF/Word</span>
+              </div>
+            </div>
+          </div>
+          <p class="project-description">
+            Multi-agent system for enterprise task workflows, report generation, and semantic Q&A, supporting agent communication and multi-stage collaboration.
+          </p>
+          <div class="project-details">
+            <h5>Key Work:</h5>
+            <ul>
+              <li>Designed agent manager with registration, command parsing, and role permissions</li>
+              <li>Implemented multi-stage workflows like "Analysis → Approval → Archive"</li>
+              <li>Built Gemini-powered Q&A engine with vector retrieval for context enhancement</li>
+              <li>Supported PDF/Word report generation with audit logging and operation tracking</li>
+            </ul>
+          </div>
+          <div class="project-outcome">
+            <strong>Results:</strong> Supports 5+ agent types covering core enterprise scenarios, <1s average response time, 90%+ AI accuracy.
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-header">
+            <div>
+              <h3 class="project-title">🧑‍⚖️ AIJudgeDAO – Decentralized AI Arbitration Platform</h3>
+              <div class="project-tech">
+                <span class="tech-tag">Solidity</span>
+                <span class="tech-tag">Chainlink VRF</span>
+                <span class="tech-tag">Reputation</span>
+                <span class="tech-tag">Next.js</span>
+                <span class="tech-tag">Gemini API</span>
+              </div>
+            </div>
+          </div>
+          <p class="project-description">
+            On-chain arbitration platform combining AI judgment capabilities with Web3 governance, using Gemini AI for arbitration suggestions and Chainlink VRF for random jury selection.
+          </p>
+          <div class="project-details">
+            <h5>Key Work:</h5>
+            <ul>
+              <li>Built contract modules (DisputeRegistry, VerdictManager, ReputationManager) for dispute creation, voting, and reputation scoring</li>
+              <li>Integrated Gemini for semantic understanding of evidence and dispute context</li>
+              <li>Developed Next.js frontend for evidence upload, verdict viewing, and voting participation</li>
+              <li>Used Chainlink VRF for transparent and fair arbitrator selection</li>
+            </ul>
+          </div>
+          <div class="project-outcome">
+            <strong>Results:</strong> Complete end-to-end arbitration flow, <30s average response time, reputation assessment and visual decision records. Deployed to testnet for Chainlink Hackathon.
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-header">
+            <div>
+              <h3 class="project-title">🎟️ Lottery – Decentralized Lottery Lifecycle Platform</h3>
+              <div class="project-tech">
+                <span class="tech-tag">Solidity</span>
+                <span class="tech-tag">USDT Bonds</span>
+                <span class="tech-tag">State Machine</span>
+                <span class="tech-tag">Access Control</span>
+                <span class="tech-tag">Prize Pool</span>
+              </div>
+            </div>
+          </div>
+          <p class="project-description">
+            Scalable lottery contract management system focused on lifecycle, access control, and fund isolation, suitable for platform-based lottery applications.
+          </p>
+          <div class="project-details">
+            <h5>Key Work:</h5>
+            <ul>
+              <li>Designed lottery state machine (Ready → Distribute → Rollout → Terminal) with reuse and termination mechanisms</li>
+              <li>Implemented dual permission model (admin vs issuer) for enhanced security and governance flexibility</li>
+              <li>Supported independent prize pool management with USDT bond binding for unified multi-lottery management</li>
+              <li>Enabled state reset to Ready after drawing for improved lottery reusability</li>
+              <li>Wrote comprehensive state transition and fund settlement test scripts ensuring contract reliability</li>
+            </ul>
+          </div>
+          <div class="project-outcome">
+            <strong>Results:</strong> Completed all core logic modules, supports 20+ state path unit tests, multi-contract coordination capability for platform lottery scenarios.
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2 class="section-title">
+          <i class="fas fa-trophy"></i>
+          Hackathons & Awards
+        </h2>
+        <div class="section-content">
+          <ul style="list-style: none; padding: 0;">
+            <li style="padding: 0.5rem 0; display: flex; align-items: center; gap: 0.75rem;">
+              <i class="fas fa-medal" style="color: var(--warning-color);"></i>
+              <strong>Chainlink Spring Hackathon 2025</strong> - Finalist
+            </li>
+            <li style="padding: 0.5rem 0; display: flex; align-items: center; gap: 0.75rem;">
+              <i class="fas fa-award" style="color: var(--success-color);"></i>
+              <strong>Google Cloud ADK Hackathon</strong> - Top 10
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2 class="section-title">
+          <i class="fas fa-graduation-cap"></i>
+          Education & Certifications
+        </h2>
+        <div class="section-content">
+          <ul style="list-style: none; padding: 0;">
+            <li style="padding: 0.5rem 0; display: flex; align-items: center; gap: 0.75rem;">
+              <i class="fas fa-university" style="color: var(--primary-color);"></i>
+              <strong>B.S. in Information & Computing Science</strong> - 2017
+            </li>
+            <li style="padding: 0.5rem 0; display: flex; align-items: center; gap: 0.75rem;">
+              <i class="fas fa-certificate" style="color: var(--secondary-color);"></i>
+              <strong>Chainlink Certified Developer</strong> - 2025
+            </li>
+            <li style="padding: 0.5rem 0; display: flex; align-items: center; gap: 0.75rem;">
+              <i class="fas fa-badge-check" style="color: var(--accent-color);"></i>
+              <strong>Devfolio Full-Stack Developer Badge</strong> - 2025
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Language toggle
+    const langButtons = document.querySelectorAll('.lang-btn');
+    const langContents = document.querySelectorAll('.lang-content');
+
+    langButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const targetLang = btn.dataset.lang;
+
+        // Update button states
+        langButtons.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        // Update content visibility
+        langContents.forEach(content => {
+          if (content.dataset.lang === targetLang) {
+            content.classList.add('active');
+          } else {
+            content.classList.remove('active');
+          }
+        });
+      });
+    });
+
+    // Theme toggle
+    const themeToggle = document.getElementById('theme-toggle');
+    const body = document.body;
+
+    themeToggle.addEventListener('click', () => {
+      const currentTheme = body.getAttribute('data-theme');
+      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+
+      body.setAttribute('data-theme', newTheme);
+
+      const icon = themeToggle.querySelector('i');
+      if (newTheme === 'dark') {
+        icon.className = 'fas fa-sun';
+      } else {
+        icon.className = 'fas fa-moon';
+      }
+
+      // Save preference
+      localStorage.setItem('theme', newTheme);
+    });
+
+    // Load saved theme
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    body.setAttribute('data-theme', savedTheme);
+    const icon = themeToggle.querySelector('i');
+    if (savedTheme === 'dark') {
+      icon.className = 'fas fa-sun';
+    }
+
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+
+    // Add animation on scroll
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, observerOptions);
+
+    // Observe all project cards and sections
+    document.querySelectorAll('.project-card, .section').forEach(el => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(20px)';
+      el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+      observer.observe(el);
+    });
+  </script>
+</body>
+</html>
